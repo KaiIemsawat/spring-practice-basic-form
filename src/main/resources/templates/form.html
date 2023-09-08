@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Page</title>
+</head>
+<body>
+    <h1>Form</h1>
+
+    <form th:action="@{/processform}" th:object="${user}" method="POST">
+        <label>First name :</label>
+        <input type="text" th:field="*{firstname}">
+        <span th:if="${#fields.hasErrors('firstname')}" th:errors="*{firstname}" class="error"></span>
+
+        <label>Last name :</label>
+        <input type="text" th:field="*{lastname}">
+        <span th:if="${#fields.hasErrors('lastname')}" th:errors="*{lastname}" class="error"></span>
+
+        <label>Favorite number :</label>
+        <input type="number" th:field="*{favoriteNumber}">
+        <span th:if="${#fields.hasErrors('favoriteNumber')}" th:errors="*{favoriteNumber}" class="error"></span>
+
+        <label>Tell us about yourself :</label>
+        <textarea type="text" th:field="*{info}" />
+        <span th:if="${#fields.hasErrors('info')}" th:errors="*{info}" class="error"></span>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
