@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>User Confirmation Page</title>
+</head>
+<body>
+<h2>Confirmation for : <span th:text="${user.firstname + ' ' + user.lastname}"/></h2>
+<p>Favorite number is : <span th:text="${user.favoriteNumber}"/></p>
+<p>Personal info : <span th:text="${user.info}"></span></p>
+</body>
+</html>

@@ -3,26 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <title>Form Page</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
 </head>
 <body>
     <h1>Form</h1>
 
     <form th:action="@{/processform}" th:object="${user}" method="POST">
-        <label>First name :</label>
-        <input type="text" th:field="*{firstname}">
-        <span th:if="${#fields.hasErrors('firstname')}" th:errors="*{firstname}" class="error"></span>
+        <div>
+            <label>First name :</label>
+            <input type="text" th:field="*{firstname}">
+            <p th:if="${#fields.hasErrors('firstname')}" th:errors="*{firstname}" class="error"></p>
+        </div>
+        <br>
 
-        <label>Last name :</label>
-        <input type="text" th:field="*{lastname}">
-        <span th:if="${#fields.hasErrors('lastname')}" th:errors="*{lastname}" class="error"></span>
+        <div>
+            <label>Last name :</label>
+            <input type="text" th:field="*{lastname}">
+            <p th:if="${#fields.hasErrors('lastname')}" th:errors="*{lastname}" class="error"></p>
+        </div>
+        <br>
 
-        <label>Favorite number :</label>
-        <input type="number" th:field="*{favoriteNumber}">
-        <span th:if="${#fields.hasErrors('favoriteNumber')}" th:errors="*{favoriteNumber}" class="error"></span>
+        <div>
+            <label>Favorite number :</label>
+            <input type="number" th:field="*{favoriteNumber}">
+            <p th:if="${#fields.hasErrors('favoriteNumber')}" th:errors="*{favoriteNumber}" class="error"></p>
+        </div>
+        <br>
 
-        <label>Tell us about yourself :</label>
-        <textarea type="text" th:field="*{info}" />
-        <span th:if="${#fields.hasErrors('info')}" th:errors="*{info}" class="error"></span>
+        <div>
+            <label>Tell us about yourself :</label>
+            <textarea type="text" th:field="*{info}" />
+            <p th:if="${#fields.hasErrors('info')}" th:errors="*{info}" class="error"></p>
+        </div>
+        <br>
 
         <input type="submit" value="Submit">
     </form>
